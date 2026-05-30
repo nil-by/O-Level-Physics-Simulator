@@ -12,3 +12,7 @@
 * **Struggles:** Felt frustrated at the start looking at complex Pygame setup syntax, but it clicked once I realized the screen is just an X-Y math grid.
 * **Next Step:** The ball currently falls forever off the screen. Next session, I want to add a solid floor using O-Level boundaries so the ball bounces back up!
 * **Breakthrough Concept:** Realized that in a computer loop, the 't' in v = u + at is hidden. Because the loop updates frame-by-frame, delta_t equals 1, making it mathematically invisible in the line 
+## Day 2 (Update): May 31, 2026
+* **The Realization:** Challenged the hidden time variable logic. Realized that treating a loop as a whole unit of 1 creates fake physics locked to monitor speeds.
+* **The Upgrade:** Introduced an explicit time step variable (`dt = 0.016`) representing 1/60th of a second, and real Earth gravity (`gravity = 9.8`). 
+* **The Logic Click:** Rewrote the engine room using true O-Level mechanics (`ball_y += ball_velocity_y * dt` and `ball_velocity_y += gravity * dt`). 60 loops now perfectly equal 1 real-world second. It felt messy and overwhelming at first, but the math fully checks out.

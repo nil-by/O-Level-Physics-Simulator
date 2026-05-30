@@ -15,6 +15,8 @@ ball_x = 400  # Right in the middle of our 800-pixel width
 ball_y = 50   # Near the top of our 600-pixel height
 ball_radius = 20  # Size of the ball in pixels
 ball_velocity_y = 0
+dt = 0.016
+gravity = 9.8
 
 
 # 3. The Main Game Loop (Keeps the window open)
@@ -29,8 +31,8 @@ while running:
 
      # Draw a blue ball on the screen
     pygame.draw.circle(screen, (0, 0, 255), (ball_x, ball_y), ball_radius)
-    ball_y += ball_velocity_y
-    ball_velocity_y += 0.1
+    ball_y += ball_velocity_y * dt
+    ball_velocity_y += gravity * dt
     # Update the visual display
     pygame.display.flip()
 
