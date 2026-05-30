@@ -11,3 +11,4 @@
 * **What I Did:** Installed Pygame, opened a graphics window, drew a blue ball using coordinates, and wrote two lines of logic (`ball_y += ball_velocity_y` and `ball_velocity_y += 0.1`) to simulate constant acceleration due to gravity.
 * **Struggles:** Felt frustrated at the start looking at complex Pygame setup syntax, but it clicked once I realized the screen is just an X-Y math grid.
 * **Next Step:** The ball currently falls forever off the screen. Next session, I want to add a solid floor using O-Level boundaries so the ball bounces back up!
+* **Breakthrough Concept:** Realized that in a computer loop, the 't' in v = u + at is hidden. Because the loop updates frame-by-frame, delta_t equals 1, making it mathematically invisible in the line 
