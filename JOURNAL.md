@@ -16,3 +16,10 @@
 * **The Realization:** Challenged the hidden time variable logic. Realized that treating a loop as a whole unit of 1 creates fake physics locked to monitor speeds.
 * **The Upgrade:** Introduced an explicit time step variable (`dt = 0.016`) representing 1/60th of a second, and real Earth gravity (`gravity = 9.8`). 
 * **The Logic Click:** Rewrote the engine room using true O-Level mechanics (`ball_y += ball_velocity_y * dt` and `ball_velocity_y += gravity * dt`). 60 loops now perfectly equal 1 real-world second. It felt messy and overwhelming at first, but the math fully checks out.
+
+## Day 3: June 1, 2026
+* **Goal:** Create a solid floor boundary using O-Level coordinate limits and handle physics collisions.
+* **The Glitch Caught:** Observed a distinct bug where the ball would freeze mid-air near the bottom of the screen and vibrate for a second before kicking itself loose. 
+* **The Physics Battle:** Realized this happened because the ball sank past the 580 boundary line. The computer got trapped in a loop flipping the velocity vector up-and-down every millisecond. It only broke free because gravity kept piling on downward force until it violently kicked the ball loose.
+* **The Engineering Fix:** Added an explicit boundary repositioning line (`ball_y = 580`) inside the conditional block. By instantly resetting the ball's center to the floor surface on impact, the engine avoids the double-trigger trap. The ball now bounces perfectly and smoothly.
+* **2D Vector Upgrade:** Expanded the physics engine from 1D vertical motion to 2D trajectory. Added a constant horizontal velocity component 
